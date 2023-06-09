@@ -1,25 +1,88 @@
-import '../App.css';
-
+// import { Container, Navbar } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import classes from "./Header.module.css";
 function Header(props) {
-    return (
+  return (
+    <div>
+      <header className={classes.header}>
+        <nav>
+          <ul className={classes.list}>
+            {/* <li>
+              <Navbar bg="Light" expand="sm" variant="dark">
+                <Container>
+                  <Navbar.Brand href="/">HOME</Navbar.Brand>
+                </Container>
+              </Navbar>
+            </li>
+
+            <li>
+              <Navbar bg="Light" expand="sm" variant="dark">
+                <Container>
+                  <Navbar.Brand href="/">ABOUT</Navbar.Brand>
+                </Container>
+              </Navbar>
+            </li>
+            <li>
+              <Navbar bg="Light" expand="sm" variant="dark">
+                <Container>
+                  <Navbar.Brand href="/">STORE</Navbar.Brand>
+                </Container>
+              </Navbar>
+            </li> */}
+            <li>
+              <NavLink
+                exact
+                activeClassName="active_class"
+                to="/home"
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                exact
+                activeClassName="active_class"
+                to="/about"
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
+              >
+                About
+              </NavLink>
+            </li>
+            <li>
+              {" "}
+              <NavLink
+                activeClassName="active_class"
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
+              >
+                Store
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+        <br />
+        <br />
+
+        <div className={classes.carts} onClick={() => props.handleShow(true)}>
+          {" "}
+          Cart
+          <sup> {props.count} </sup>
+        </div>
+      </header>
+
+      <h1 className="header">The Generics</h1>
       <div>
-        <div className='flex shopping-card'>
-            <div onClick={() => props.handleShow(false)} >HOME</div>
-            <div onClick={() => props.handleShow(false)} >STORE</div>
-            <div onClick={() => props.handleShow(false)} >ABOUT</div>
-
-            <div onClick={() => props.handleShow(true)}> Cart
-                <sup> {props.count} </sup>
-            </div>
-
-        </div>
-        <div>
-  <h1 className='header'>The Generics</h1>
-        </div>
-        </div>
-
-
-    );
+        <h1 className="headers">MUSIC</h1>
+      </div>
+    </div>
+  );
 }
 
 export default Header;
