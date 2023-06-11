@@ -30,37 +30,36 @@ function Header(props) {
               </Navbar>
             </li> */}
             <li>
-              <NavLink
+              <NavLink to="/home"
                 exact
                 activeClassName="active_class"
-                to="/home"
-                className={({ isActive }) =>
-                  isActive ? classes.active : undefined
-                }
+                
+                // className={({ isActive }) =>
+                //   isActive ? classes.active : undefined
+                // }
               >
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink
-                exact
-                activeClassName="active_class"
-                to="/about"
-                className={({ isActive }) =>
-                  isActive ? classes.active : undefined
-                }
+              <NavLink to="/about"
+              activeClassName="active_class"
+                
+                // className={({ isActive }) =>
+                //   isActive ? classes.active : undefined
+                // }
               >
                 About
               </NavLink>
             </li>
             <li>
               {" "}
-              <NavLink
+              <NavLink to="/"
                 activeClassName="active_class"
-                to="/"
-                className={({ isActive }) =>
-                  isActive ? classes.active : undefined
-                }
+                
+                // className={({ isActive }) =>
+                //   isActive ? classes.active : undefined
+                // }
               >
                 Store
               </NavLink>

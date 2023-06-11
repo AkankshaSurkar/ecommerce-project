@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
-// import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProductList from "./components/ProductList";
 import CartList from "./components/CartList";
 import Store from "./Pages/Store";
@@ -9,20 +8,6 @@ import About from "./Pages/About";
 import Home from "./Pages/Home";
 import ErrorPage from "./Pages/Error";
 import "./App.css";
-// import RootLayout from "./Pages/Root";
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <RootLayout />,
-//     errorElement: <ErrorPage />,
-//     children: [
-//       { path: "/", element: <Home /> },
-//       { path: "/about", element: <About /> },
-//       { path: "/store", element: <Store /> },
-//     ],
-//   },
-// ]);
 
 function App() {
   const productsArr = [
@@ -75,14 +60,12 @@ function App() {
 
   return (
     <div>
-      {/* <RouterProvider router={router} /> */}
-
-      <Header count={cart.length} handleShow={handleShow}></Header>
+      <Header count={cart.length} handleShow={handleShow} />
       <Switch>
-        <Route path="/home" exact Pages={Home} />
-        <Route path="/about" Pages={About} />
-        <Route path="/store" Pages={Store} />
-        <Route path="*" Pages={ErrorPage} />
+        <Route path="/home" exact component={Home} />
+        <Route path="/about" exact component={About} />
+        <Route path="/" exact component={Store} />
+        <Route path="*" component={ErrorPage} />
       </Switch>
 
       {showCart ? (
