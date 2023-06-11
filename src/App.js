@@ -1,5 +1,5 @@
 import { useState } from "react";
- import { Route } from "react-router-dom";
+ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header";
 // import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProductList from "./components/ProductList";
@@ -27,6 +27,7 @@ import "./App.css";
 function App() {
   const productsArr = [
     {
+      id:1,
       title: "Colors",
       price: 100,
       imageUrl:
@@ -34,6 +35,7 @@ function App() {
       quantity: 1,
     },
     {
+      id:2,
       title: "Black and white Colors",
       price: 50,
       imageUrl:
@@ -42,6 +44,7 @@ function App() {
     },
 
     {
+      id:3,
       title: "Yellow and Black Colors",
       price: 70,
       imageUrl:
@@ -50,6 +53,7 @@ function App() {
     },
 
     {
+      id:4,
       title: "Blue Color",
       price: 100,
       imageUrl:
@@ -72,13 +76,16 @@ function App() {
   return (
     <div>
       {/* <RouterProvider router={router} /> */}
+
+      <Router>
       <Header count={cart.length} handleShow={handleShow}></Header>
 
-      
-       <Route path="/home" element={<Home/>}/>
-        <Route  path="/about" element={<About/>} />
-        <Route path="/store" element={<Store/>} />
-        <Route path="*" element={<ErrorPage/>} />
+      <Route path="/home"  Pages={Home}/>
+        <Route  path="/about" Pages={About} />
+        <Route path="/store" Pages={Store} />
+        <Route path="*" Pages={ErrorPage} />
+      </Router>
+
 
 
       {showCart ? (
