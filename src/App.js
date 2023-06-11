@@ -62,10 +62,10 @@ function App() {
     <div>
       <Header count={cart.length} handleShow={handleShow} />
       <Switch>
-        <Route path="/home" exact component={Home} />
-        <Route path="/about" exact component={About} />
+        <Route path="/home"  component={Home} />
+        <Route path="/about"  component={About} />
         <Route path="/" exact component={Store} />
-        <Route path="*" component={ErrorPage} />
+        <Route  component={ErrorPage} />
       </Switch>
 
       {showCart ? (
