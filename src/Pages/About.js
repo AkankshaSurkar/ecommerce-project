@@ -4,7 +4,6 @@ import "../App.css";
 function About(props) {
   return (
     <div>
-        {/* const location = useLocation(); */}
 
       <h1 className="header">The Generics</h1>
       <Container>
