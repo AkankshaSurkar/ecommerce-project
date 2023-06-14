@@ -7,7 +7,10 @@ import Store from "./Pages/Store";
 import About from "./Pages/About";
 import Home from "./Pages/Home";
 import ErrorPage from "./Pages/Error";
+import Contact from "./Pages/Contact";
 import "./App.css";
+import ProductDetail from "./Pages/ProductDetails";
+import Product from "./Pages/Products";
 
 function App() {
   const productsArr = [
@@ -59,11 +62,17 @@ function App() {
     <div>
       <Header count={cart.length} handleShow={handleShow}></Header>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/store" element={<Store />} />
+        <Route path="/"  element={<Home />}></Route>
+        <Route path="/home"  element={<Home />} />
+        <Route path="/about"  element={<About />} />
+        <Route path="/store"  element={<Store />} />
+        <Route path="/contact"  element={<Contact />} />
+        <Route exact path="/product" element={<Product />} />
+
+        <Route path="/product-detail/:productId"  element={<ProductDetail />} />
+
         <Route path="*" element={<ErrorPage />} />
+
       </Routes>
 
       {showCart ? (
