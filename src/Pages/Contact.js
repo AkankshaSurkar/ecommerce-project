@@ -3,22 +3,29 @@ function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
-  
-  async function saveUser(movie) {
-    console.log({name, email, mobile});
+
+  const data = { name, email, mobile };
+
+  async function saveUser() {
+    console.log({ name, email, mobile });
+
+    try {
       const response = await fetch(
-        "https://mean-app-67743-default-rtdb.firebaseio.com/movies.json",
+        "https://ecommerce-app-798a7-default-rtdb.firebaseio.com/movie.json",
         {
           method: "POST",
-          body: JSON.stringify(movie),
           headers: {
             "Content-Type": "application/json",
           },
+          body: JSON.stringify(data),
         }
       );
-      const data = await response.json();
-      console.log(data);
+      console.log("response", response);
+    } catch (e) {
+      console.log("e", e);
     }
+  }
+
 
   return (
     <>

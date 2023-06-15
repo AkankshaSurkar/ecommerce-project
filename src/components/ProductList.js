@@ -7,7 +7,7 @@ function ProductList({ product, addToCart }) {
         return (
           <div style={{ width: "50%" }}>
             <div className="product-item">
-              <img src={productItem.imageUrl} width="40%" />
+              <img src={productItem.imageUrl} width="40%" alt=""/>
               <p>{productItem.name}</p>
               <p> Rs. {productItem.price} </p>
               <button onClick={() => addToCart(productItem)}>
