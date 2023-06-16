@@ -22,6 +22,9 @@ function Header(props) {
           <div onClick={() => props.handleShow(true)}>Product</div>
         </Link>
 
+
+
+
         <div onClick={() => props.handleShow(true)}>
           {" "}
           Cart
