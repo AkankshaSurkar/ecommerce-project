@@ -13,7 +13,7 @@ function CartList({ cart }) {
       {CART?.map((cartItem, cartindex) => {
         return (
           <div>
-            <img src={cartItem.imageUrl} width={100} />
+            <img src={cartItem.imageUrl} width={100} alt="" />
             <span> {cartItem.name} </span>
 
             <button

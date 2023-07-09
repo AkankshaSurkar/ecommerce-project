@@ -15,14 +15,15 @@ function Header(props) {
         <Link to="/about">
           <div onClick={() => props.handleShow(true)}>ABOUT</div>
         </Link>
+        <Link to="/login">
+          <div onClick={() => props.handleShow(true)}>Login</div>
+        </Link>
         <Link to="/contact">
           <div onClick={() => props.handleShow(true)}>CONTACT US</div>
         </Link>
         <Link to="/product">
           <div onClick={() => props.handleShow(true)}>Product</div>
         </Link>
-
-
 
 
         <div onClick={() => props.handleShow(true)}>

@@ -11,11 +11,8 @@ import Contact from "./Pages/Contact";
 import "./App.css";
 import ProductDetail from "./Pages/ProductDetails";
 import Product from "./Pages/Products";
-import Layout from "./Layout/Layout";
-import UserProfile from "./Profile/UserProfile";
-import AuthPage from "./Pages2/AuthPage";
-import HomePage from "./Pages2/HomePage";
-import MainNavigation from "./Layout/MainNavigation";
+import Login from "./Pages/Login";
+
 
 function App() {
   const productsArr = [
@@ -66,7 +63,6 @@ function App() {
   return (
     <div>
       <Header count={cart.length} handleShow={handleShow}></Header>
-      <MainNavigation />
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -74,17 +70,15 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/store" element={<Store />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+
         <Route exact path="/product" element={<Product />} />
 
         <Route path="/product-detail/:productId" element={<ProductDetail />} />
 
         <Route path="*" element={<ErrorPage />} />
 
-        <Route path="/" exact element={<HomePage />} />
 
-        <Route path="/auth" element={<AuthPage />} />
-
-        <Route path="/profile" element={<UserProfile />} />
       </Routes>
 
       {showCart ? (
