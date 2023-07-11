@@ -8,12 +8,22 @@
   padding: 20px 30px;
   font-size: 500%;
 }
-.headerend{
-  text-align: left;
-  background-color: rgb(87, 205, 110);
+.headers{
+  text-align: center;
+  background-color: rgb(113, 113, 123);
   color: white;
   padding: 20px 30px;
   font-size: 500%;
+  background-size: 100% 100%;
+
+}
+.headerend{
+  text-align: center;
+  background-color: rgb(21, 171, 209);
+  color: white;
+  padding: 20px 30px;
+  font-size: 400%;
+  
 }
 .headers{
   text-align: center;

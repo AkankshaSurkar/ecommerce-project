@@ -7,23 +7,26 @@ function Header(props) {
     <div>
       <div className="flex shopping-card">
         <Link to="/home">
-          <div onClick={() => props.handleShow(true)}>HOME</div>
+          {/* <div onClick={() => props.handleShow(true)}>HOME</div> */}
+          <div>HOME</div>
         </Link>
         <Link to="/store">
           <div onClick={() => props.handleShow(true)}>STORE</div>
         </Link>
         <Link to="/about">
-          <div onClick={() => props.handleShow(true)}>ABOUT</div>
+          {/* <div onClick={() => props.handleShow(true)}>ABOUT</div> */}
+          <div>ABOUT</div>
         </Link>
         <Link to="/login">
-          <div onClick={() => props.handleShow(true)}>Login</div>
+          {/* <div onClick={() => props.handleShow(true)}>Login</div> */}
+          <div>LOGIN</div>
         </Link>
-        <Link to="/contact">
+        {/* <Link to="/contact">
           <div onClick={() => props.handleShow(true)}>CONTACT US</div>
         </Link>
         <Link to="/product">
           <div onClick={() => props.handleShow(true)}>Product</div>
-        </Link>
+        </Link> */}
 
 
         <div onClick={() => props.handleShow(true)}>

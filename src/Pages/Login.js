@@ -12,8 +12,14 @@ const AuthForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
 
+  let email=localStorage.getItem("email");
+
+
   useEffect(() => {
-    fetch("https://crudcrud.com/api/a1553b2e2a3e4da0b82d775cb729024b/welcome")
+
+    fetch(
+      `https://crudcrud.com/api/acd72c3f9e7b4cd0b13ba87760964c5e/cart${email}`
+    )
       .then((res) => res.json())
       .then((json) => {
         console.log("jsonn", json);
@@ -22,7 +28,7 @@ const AuthForm = () => {
       .catch((e) => {
         console.log("e", e);
       });
-  }, []);
+  }, [email]);
 
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
@@ -33,19 +39,24 @@ const AuthForm = () => {
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
 
-    setIsLoading(true);
+console.log(enteredEmail.replace("@", "").replace(".", ""));
 
-    fetch("https://crudcrud.com/api/a1553b2e2a3e4da0b82d775cb729024b/welcome", {
-      method: "POST",
-      body: JSON.stringify({
-        email: enteredEmail,
-        password: enteredPassword,
-        returnsecureToken: true,
-      }),
-      headers: {
-        "Content-Type": "application/JSON",
-      },
-    })
+    setIsLoading(true);
+    fetch(
+      `https://crudcrud.com/api/acd72c3f9e7b4cd0b13ba87760964c5e/cart${email}`,
+      {
+
+        method: "POST",
+        body: JSON.stringify({
+          email: enteredEmail,
+          password: enteredPassword,
+          returnsecureToken: true,
+        }),
+        headers: {
+          "Content-Type": "application/JSON",
+        },
+      }
+    )
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -67,17 +78,25 @@ const AuthForm = () => {
       });
   };
 
+  
+
   return (
+    
     <section className={classes.auth}>
-      {/* {data.map((item) => {
-        return <div>{item.email}</div>;
-      })} */}
+
+
       <h1>{"Login"}</h1>
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor="email">Your Email</label>
-          <input type="email" id="email" required ref={emailInputRef} />
+          <input
+            type="email"
+            id="email"
+            required
+            ref={emailInputRef}
+          />
         </div>
+
         <div className={classes.control}>
           <label htmlFor="password">Your Password</label>
           <input

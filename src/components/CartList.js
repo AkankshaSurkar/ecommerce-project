@@ -8,6 +8,10 @@ function CartList({ cart }) {
     setCART(cart);
   }, [cart]);
 
+  const purshing = () => {
+    alert("Thanks For Purshing");
+  };
+
   return (
     <div className="items">
       {CART?.map((cartItem, cartindex) => {
@@ -55,7 +59,9 @@ function CartList({ cart }) {
           0
         )}
       </p>
-      <button className="action">PURCHASE</button>
+      <button type="submit" className="action" onClick={purshing}>
+        PURCHASE
+      </button>
     </div>
   );
 }
